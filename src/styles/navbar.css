@@ -1,0 +1,35 @@
+.nav-bar-container {
+  height: 7vh;
+  background: var(--background);
+  border-bottom: 10px double var(--text);
+  box-shadow: 0px 0px 20px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.nav-bar-container .nav-bar {
+  gap: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.nav-bar-container .nav-bar .nav-link:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  > img {
+    width: 50px;
+    height: 50px;
+  }
+}
+.search {
+  width: 50px;
+}
