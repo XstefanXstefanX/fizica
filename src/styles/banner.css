@@ -1,0 +1,25 @@
+.welcome-banner-container {
+  position: relative;
+  height: 40vh;
+  box-shadow: 2px 2px 20px black;
+  margin: 0 0 2rem 0;
+}
+.welcome-banner-container .welcome-banner {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+  z-index: -1;
+}
+.welcome-banner-title {
+  text-align: center;
+  width: 100%;
+  font-family: "Minecraft", sans-serif;
+  font-size: 13vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  color: var(--text);
+}

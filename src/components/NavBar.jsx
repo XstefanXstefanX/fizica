@@ -3,13 +3,32 @@ import "../styles/navbar.css";
 import SearchImg from "../images/search.svg";
 import BlackSearchImg from "../images/blacksearch.svg";
 import { Outlet, Link } from "react-router-dom";
+import Logo from "../images/logo.svg";
+import DropDownSVg from "../images/dropdown.svg";
+import MenuImg from "../images/menu.svg";
+import { LINKS_SUPORT_DIDACTIC } from "../data";
+import { LINKS_SUPORT_CLASE } from "../data";
+import SideBar from "./SideBar";
+import { LINKS_EXERCISE } from "../data";
 
-const NavBar = () => {
-  const [open, setOpen] = React.useState(false);
+const NavBar = (props) => {
+  const [openClase, setOpenClase] = React.useState(false);
+  const [openSuport, setOpenSuport] = React.useState(false);
+  const [openExercise, setOpenExercise] = React.useState(false);
   const [searchOpen, setSearchOpen] = React.useState(false);
   const [inputText, setInputText] = React.useState("");
-  const handleOpen = () => {
-    setOpen(!open);
+  const [isOpenSideBar, setIsOpenSideBar] = React.useState(false);
+  const handleOpenExercise = () => {
+    setOpenExercise(!openExercise);
+  };
+  const handleOpenSideBar = () => {
+    setIsOpenSideBar(!isOpenSideBar);
+  };
+  const handleOpenClase = () => {
+    setOpenClase(!openClase);
+  };
+  const handleOpenSuport = () => {
+    setOpenSuport(!openSuport);
   };
   const handleOpenSearch = () => {
     setSearchOpen(!searchOpen);
@@ -21,55 +40,120 @@ const NavBar = () => {
   return (
     <>
       <nav className="nav-bar-container">
-        <span className="title">
-          <Link to="/home" className="logo-container">
-            <img
-              className="logo"
-              src="./src/images/logo.svg"
-              alt="logo-image"
-            />
-            Fizica - lumea mea
+        <label className="hamburger-menu" onChange={handleOpenSideBar}>
+          <input type="checkbox" className="menu-button"></input>
+        </label>
+
+        <SideBar isOpen={isOpenSideBar} path={props.path} />
+        <span className="title nav-link">
+          <Link to="/" className="logo-container">
+            <img className="logo" src={Logo} alt="logo-image" />
+            FIZICA - lumea mea
           </Link>
         </span>
         <ul className="nav-bar">
           <li className="nav-link">
-            <Link to="/home">Pagina de pornire</Link>
-          </li>
-          <li className="nav-link">
-            <Link to="/suportdidactic">Suport Didactic</Link>
+            <Link to="/" className={props.path === "/" ? "active link" : ""}>
+              Pagina de pornire
+            </Link>
           </li>
           <li
-            onMouseEnter={handleOpen}
-            onMouseLeave={handleOpen}
+            onMouseEnter={handleOpenSuport}
+            onMouseLeave={handleOpenSuport}
             className="nav-link drop-down-activator"
           >
-            <span>Clase</span>
-            {open ? (
+            <span>
+              SuportDidactic{" "}
+              <img
+                className="dropdown-svg"
+                src={DropDownSVg}
+                alt="dropdown-svg"
+              />
+            </span>
+            {openSuport ? (
               <div className="nav-bar-dropdown">
                 <ul>
-                  <li>
-                    <Link to="/clasa8">Clasa VIII</Link>
-                  </li>
-                  <li>
-                    <Link to="/clasa9">Clasa IX</Link>
-                  </li>
-                  <li>
-                    <Link to="/clasa10">Clasa X</Link>
-                  </li>
-                  <li>
-                    <Link to="/clasa11">Clasa XI</Link>
-                  </li>
-                  <li>
-                    <Link to="/clasa12">Clasa XII</Link>
-                  </li>
+                  {LINKS_SUPORT_DIDACTIC.map((link) => (
+                    <li className="nav-link-drop" key={link.name}>
+                      <Link
+                        className={props.path === `${link.to}` ? "active" : ""}
+                        to={link.to}
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             ) : (
               <div></div>
             )}
           </li>
-          <li className="nav-link">Exersează</li>
-          <li className="nav-link">Noțiuni</li>
+          <li
+            onMouseEnter={handleOpenClase}
+            onMouseLeave={handleOpenClase}
+            className="nav-link drop-down-activator"
+          >
+            <span>
+              Clase{" "}
+              <img
+                className="dropdown-svg"
+                src={DropDownSVg}
+                alt="dropdown-svg"
+              />{" "}
+            </span>
+            {openClase ? (
+              <div className="nav-bar-dropdown">
+                <ul>
+                  {LINKS_SUPORT_CLASE.map((link) => (
+                    <li className="nav-link-drop" key={link.name}>
+                      <Link
+                        className={props.path === `${link.to}` ? "active" : ""}
+                        to={link.to}
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <div></div>
+            )}
+          </li>
+          <li
+            onMouseEnter={handleOpenExercise}
+            onMouseLeave={handleOpenExercise}
+            className="nav-link drop-down-activator"
+          >
+            <span>Exersează </span>
+            {openExercise ? (
+              <div className="nav-bar-dropdown">
+                <ul>
+                  {LINKS_EXERCISE.map((link) => (
+                    <li className="nav-link-drop" key={link.name}>
+                      <Link
+                        className={props.path === `${link.to}` ? "active" : ""}
+                        to={link.to}
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <div></div>
+            )}
+          </li>
+          <li className="nav-link">
+            <Link
+              className={props.path === "/noutati" ? "active" : ""}
+              to="/noutati"
+            >
+              Noutăți
+            </Link>
+          </li>
         </ul>
         <div className="search-button" onClick={handleOpenSearch}>
           <img
@@ -102,6 +186,7 @@ const NavBar = () => {
           <div className="search-bar no-show"></div>
         )}
       </nav>
+      <div className="fake-nav"></div>
       <Outlet />
     </>
   );

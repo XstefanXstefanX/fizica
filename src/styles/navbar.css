@@ -1,4 +1,36 @@
+.nav-link {
+  > a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+  }
+  > a:hover {
+    opacity: 0.8;
+  }
+  > a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    background: var(--accent);
+    bottom: 0;
+    left: 0;
+    transform: scale(0);
+    transition: 250ms ease;
+  }
+  > a:hover::after {
+    transform: scale(1);
+  }
+}
+.fake-nav {
+  width: 100%;
+  height: 8vh;
+}
 .nav-bar-container {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
   height: 7vh;
   background: var(--background);
   border-bottom: 10px double var(--text);
@@ -35,6 +67,7 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  font-size: 1.25rem;
 }
 .logo {
   width: 50px;
@@ -44,6 +77,7 @@
   transform: scale(0);
 }
 .search-bar-container {
+  z-index: 100000;
   transform: scale(1);
   display: flex;
   justify-content: space-evenly;
@@ -92,6 +126,7 @@
   position: relative;
 }
 .nav-bar-dropdown {
+  z-index: 99999;
   background: var(--background);
   box-shadow: 0px 0px 15px black;
   width: 150px;
@@ -99,11 +134,82 @@
   position: absolute;
   display: flex;
   flex-direction: column;
+  padding: 0.5rem;
   > ul {
     display: flex;
     flex-direction: column;
     > li {
       padding: 5px;
     }
+  }
+}
+.active {
+  color: var(--accent);
+}
+.nav-link-drop:hover {
+  opacity: 0.8;
+}
+.dropdown-svg {
+  width: 10px;
+}
+/* Hamburger Menu Animation */
+.hamburger-menu {
+  --x-width: calc(var(--hambuger-height) * 1.41421356237);
+  display: none;
+  z-index: 9999;
+  flex-direction: column;
+  gap: var(--bar-gap);
+  width: max-content;
+  padding: 2rem;
+  cursor: pointer;
+}
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background: var(--text);
+  border-radius: 1000px;
+  transition: opacity var(--animation-timing), width var(--animation-timing),
+    rotate var(--animation-timing), translate var(--animation-timing),
+    background-color var(--animation-timing);
+  transform-origin: left center;
+}
+.hamburger-menu input {
+  appearance: none;
+  outline: none;
+  pointer-events: none;
+}
+.hamburger-menu:has(input:checked)::before {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+  background-color: var(--accent);
+}
+.hamburger-menu:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+  background-color: var(--accent);
+}
+.hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+/* RESPONSIVE DESIGN*/
+@media screen and (max-width: 55rem) {
+  .title {
+    width: 100%;
+  }
+  .nav-bar-container .nav-bar .nav-link {
+    display: none;
+  }
+  .nav-bar-container .nav-bar {
+    width: 0;
+  }
+  .hamburger-menu {
+    display: flex;
   }
 }
