@@ -42,3 +42,16 @@
   transform: scaleY(100%);
   height: auto;
 }
+.side-bar-active {
+  color: var(--accent);
+  position: relative;
+}
+.side-bar-active::before {
+  content: "";
+  position: absolute;
+  background: var(--accent);
+  width: 50px;
+  height: 100%;
+  top: 0;
+  left: -60px;
+}

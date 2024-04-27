@@ -45,7 +45,7 @@ const NavBar = (props) => {
         </label>
 
         <SideBar isOpen={isOpenSideBar} path={props.path} />
-        <span className="title nav-link">
+        <span className="title">
           <Link to="/" className="logo-container">
             <img className="logo" src={Logo} alt="logo-image" />
             FIZICA - lumea mea
@@ -165,7 +165,7 @@ const NavBar = (props) => {
         {searchOpen ? (
           <div className="search-bar-container">
             <span onClick={handleOpenSearch} className="pointer">
-              Go Back
+              {"< "}Înapoi
             </span>
             <div className="search-bar">
               <img

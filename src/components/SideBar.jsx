@@ -7,6 +7,7 @@ import { LINKS_EXERCISE } from "../data";
 import DropDownSvg from "../images/dropdown.svg";
 
 const SideBar = (props) => {
+  const path = props.path;
   const [drop, setDrop] = React.useState(false);
   const [dropClase, setDropClase] = React.useState(false);
   const [dropExerseaza, setDropExerseaza] = React.useState(false);
@@ -25,7 +26,9 @@ const SideBar = (props) => {
     >
       <ul className="side-bar">
         <li className="side-nav-link">
-          <Link to="/">Pagina de pornire</Link>
+          <Link to="/" className={path === "/" ? "side-bar-active" : ""}>
+            Pagina de pornire
+          </Link>
         </li>
         <li className="side-nav-link">
           <span onClick={handleDrop}>
@@ -35,7 +38,12 @@ const SideBar = (props) => {
           <ul className={`side-bar-drop ${drop ? "drop" : ""}`}>
             {LINKS_SUPORT_DIDACTIC.map((link) => (
               <li key={link.name}>
-                <Link to={link.to}>{link.name}</Link>
+                <Link
+                  to={link.to}
+                  className={path === `${link.to}` ? "side-bar-active" : ""}
+                >
+                  {link.name}
+                </Link>
               </li>
             ))}
           </ul>
@@ -47,7 +55,12 @@ const SideBar = (props) => {
           <ul className={`side-bar-drop ${dropClase ? "drop" : ""}`}>
             {LINKS_SUPORT_CLASE.map((link) => (
               <li key={link.name}>
-                <Link to={link.to}>{link.name}</Link>
+                <Link
+                  to={link.to}
+                  className={path === `${link.to}` ? "side-bar-active" : ""}
+                >
+                  {link.name}
+                </Link>
               </li>
             ))}
           </ul>
@@ -59,13 +72,23 @@ const SideBar = (props) => {
           <ul className={`side-bar-drop ${dropExerseaza ? "drop" : ""}`}>
             {LINKS_EXERCISE.map((link) => (
               <li key={link.name}>
-                <Link to={link.to}>{link.name}</Link>
+                <Link
+                  to={link.to}
+                  className={path === `${link.to}` ? "side-bar-active" : ""}
+                >
+                  {link.name}
+                </Link>
               </li>
             ))}
           </ul>
         </li>
         <li className="side-nav-link">
-          <Link to="/noutati">Noutăți</Link>
+          <Link
+            to="/noutati"
+            className={path === "/noutati" ? "side-bar-active" : ""}
+          >
+            Noutăți
+          </Link>
         </li>
       </ul>
       <Outlet />
