@@ -65,10 +65,7 @@ const Home = () => {
               <br />
               <hr />
             </h3>
-            <p>
-              <span>Fizicienilor</span>"Relativitatea se aplica la fizica, nu la
-              etica."
-            </p>
+            <p>"Relativitatea se aplica la fizica, nu la etica."</p>
           </div>
         </div>
       </div>

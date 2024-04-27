@@ -47,7 +47,7 @@ const NavBar = (props) => {
         <SideBar isOpen={isOpenSideBar} path={props.path} />
         <span className="title">
           <Link to="/" className="logo-container">
-            <img className="logo" src={Logo} alt="logo-image" />
+            <img className="site-logo" src={Logo} alt="logo-image" />
             FIZICA - lumea mea
           </Link>
         </span>

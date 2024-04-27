@@ -21,8 +21,8 @@ import Exerseaza11 from "./pages/Exerseaza/Exerseaza11";
 import Exerseaza12 from "./pages/Exerseaza/Exerseaza12";
 import News from "./pages/News";
 import "./styles/banner.css";
-import Login from "./Login";
-
+import Login from "./views/Login";
+import Register from "./views/Register";
 function App() {
   const location = useLocation();
   return (
@@ -30,6 +30,7 @@ function App() {
       <NavBar path={location.pathname} />
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/register" element={<Register />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/clasa8" element={<Clasa8 />}></Route>
         <Route path="/clasa9" element={<Clasa9 />}></Route>
