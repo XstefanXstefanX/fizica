@@ -2,12 +2,12 @@ import React from "react";
 import BannerImg from "../../images/welcome-banner.jpg";
 import Banner from "../../components/Banner";
 
-const Exerseaza11 = () => {
+const SuportTeoretic = () => {
   return (
     <div>
-      <Banner image={BannerImg} title={"Exerseaza XI"} />
+      <Banner image={BannerImg} title={"Suport Teoretic"} />
     </div>
   );
 };
 
-export default Exerseaza11;
+export default SuportTeoretic;

@@ -7,7 +7,7 @@ import Clasa9 from "../images/clasa9.jpg";
 import Clasa10 from "../images/clasa10.jpg";
 import Clasa11 from "../images/clasa11.jpg";
 import Clasa12 from "../images/clasa12.jpg";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -69,7 +69,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Outlet />
     </div>
   );
 };

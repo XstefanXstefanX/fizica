@@ -1,6 +1,7 @@
-import React from "react";
+import "./styles/index.css";
+import "./styles/banner.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Clasa8 from "./pages/Clase/Clasa8";
 import Clasa9 from "./pages/Clase/Clasa9";
@@ -12,47 +13,100 @@ import Manual9 from "./pages/SuportDidactic/manual9";
 import Manual10 from "./pages/SuportDidactic/manual10";
 import Manual11 from "./pages/SuportDidactic/manual11";
 import Manual12 from "./pages/SuportDidactic/manual12";
-import Culegere from "./pages/SuportDidactic/Culegere";
-import Algoritmi from "./pages/SuportDidactic/Algoritmi";
-import Exerseaza8 from "./pages/Exerseaza/Exerseaza8";
-import Exerseaza9 from "./pages/Exerseaza/Exerseaza9";
-import Exerseaza10 from "./pages/Exerseaza/Exerseaza10";
-import Exerseaza11 from "./pages/Exerseaza/Exerseaza11";
-import Exerseaza12 from "./pages/Exerseaza/Exerseaza12";
+import FiseDeLucru from "./pages/SuportDidactic/FiseDeLucru";
+import SuportTeoretic from "./pages/SuportDidactic/SuportTeoretic";
 import News from "./pages/News";
-import "./styles/banner.css";
-import Login from "./views/Login";
-import Register from "./views/Register";
-function App() {
-  const location = useLocation();
+import { KindeProvider } from "@kinde-oss/kinde-auth-react";
+import ProtectedRoute from "./ProtectedRoute";
+import Profile from "./pages/Profile";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <NavBar />,
+    children: [
+      {
+        element: <ProtectedRoute />,
+        children: [
+          {
+            path: "/",
+            element: <Home />,
+          },
+          {
+            path: "/profil",
+            element: <Profile />,
+          },
+          {
+            path: "/clasa8",
+            element: <Clasa8 />,
+          },
+
+          {
+            path: "/clasa9",
+            element: <Clasa9 />,
+          },
+          {
+            path: "/clasa10",
+            element: <Clasa10 />,
+          },
+          {
+            path: "/clasa11",
+            element: <Clasa11 />,
+          },
+          {
+            path: "/clasa12",
+            element: <Clasa12 />,
+          },
+          {
+            path: "/manual8",
+            element: <Manual8 />,
+          },
+          {
+            path: "/manual9",
+            element: <Manual9 />,
+          },
+          {
+            path: "/manual10",
+            element: <Manual10 />,
+          },
+          {
+            path: "/manual11",
+            element: <Manual11 />,
+          },
+          {
+            path: "/manual12",
+            element: <Manual12 />,
+          },
+          {
+            path: "/fisedelucru",
+            element: <FiseDeLucru />,
+          },
+          {
+            path: "/suportteoretic",
+            element: <SuportTeoretic />,
+          },
+          {
+            path: "/noutati",
+            element: <News />,
+          },
+        ],
+      },
+    ],
+  },
+]);
+
+const App = () => {
   return (
-    <>
-      <NavBar path={location.pathname} />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/register" element={<Register />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/clasa8" element={<Clasa8 />}></Route>
-        <Route path="/clasa9" element={<Clasa9 />}></Route>
-        <Route path="/clasa10" element={<Clasa10 />}></Route>
-        <Route path="/clasa11" element={<Clasa11 />}></Route>
-        <Route path="/clasa12" element={<Clasa12 />}></Route>
-        <Route path="/culegere" element={<Culegere />}></Route>
-        <Route path="/manual8" element={<Manual8 />}></Route>
-        <Route path="/manual9" element={<Manual9 />}></Route>
-        <Route path="/manual10" element={<Manual10 />}></Route>
-        <Route path="/manual11" element={<Manual11 />}></Route>
-        <Route path="/manual12" element={<Manual12 />}></Route>
-        <Route path="/algoritmi" element={<Algoritmi />}></Route>
-        <Route path="/exerseaza/clasa8" element={<Exerseaza8 />}></Route>
-        <Route path="/exerseaza/clasa9" element={<Exerseaza9 />}></Route>
-        <Route path="/exerseaza/clasa10" element={<Exerseaza10 />}></Route>
-        <Route path="/exerseaza/clasa11" element={<Exerseaza11 />}></Route>
-        <Route path="/exerseaza/clasa12" element={<Exerseaza12 />}></Route>
-        <Route path="/noutati" element={<News />}></Route>
-      </Routes>
-    </>
+    <div>
+      <KindeProvider
+        clientId="7404b3bcee1540d19cf57ad2a67bb08c"
+        domain="https://universulfizica.kinde.com"
+        redirectUri="http://localhost:5173"
+        logoutUri="http://localhost:5173"
+      >
+        <RouterProvider router={router} />
+      </KindeProvider>
+    </div>
   );
-}
+};
 
 export default App;

@@ -9,18 +9,15 @@ import MenuImg from "../images/menu.svg";
 import { LINKS_SUPORT_DIDACTIC } from "../data";
 import { LINKS_SUPORT_CLASE } from "../data";
 import SideBar from "./SideBar";
-import { LINKS_EXERCISE } from "../data";
+import { useLocation } from "react-router-dom";
 
-const NavBar = (props) => {
+const NavBar = () => {
+  const location = useLocation();
   const [openClase, setOpenClase] = React.useState(false);
   const [openSuport, setOpenSuport] = React.useState(false);
-  const [openExercise, setOpenExercise] = React.useState(false);
   const [searchOpen, setSearchOpen] = React.useState(false);
   const [inputText, setInputText] = React.useState("");
   const [isOpenSideBar, setIsOpenSideBar] = React.useState(false);
-  const handleOpenExercise = () => {
-    setOpenExercise(!openExercise);
-  };
   const handleOpenSideBar = () => {
     setIsOpenSideBar(!isOpenSideBar);
   };
@@ -44,7 +41,7 @@ const NavBar = (props) => {
           <input type="checkbox" className="menu-button"></input>
         </label>
 
-        <SideBar isOpen={isOpenSideBar} path={props.path} />
+        <SideBar isOpen={isOpenSideBar} path={location.pathname} />
         <span className="title">
           <Link to="/" className="logo-container">
             <img className="site-logo" src={Logo} alt="logo-image" />
@@ -53,8 +50,19 @@ const NavBar = (props) => {
         </span>
         <ul className="nav-bar">
           <li className="nav-link">
-            <Link to="/" className={props.path === "/" ? "active link" : ""}>
+            <Link
+              to="/"
+              className={location.pathname === "/" ? "active link" : ""}
+            >
               Pagina de pornire
+            </Link>
+          </li>
+          <li className="nav-link">
+            <Link
+              to="/profil"
+              className={location.pathname === "/profil" ? "active link" : ""}
+            >
+              Profilul Meu
             </Link>
           </li>
           <li
@@ -76,7 +84,9 @@ const NavBar = (props) => {
                   {LINKS_SUPORT_DIDACTIC.map((link) => (
                     <li className="nav-link-drop" key={link.name}>
                       <Link
-                        className={props.path === `${link.to}` ? "active" : ""}
+                        className={
+                          location.pathname === `${link.to}` ? "active" : ""
+                        }
                         to={link.to}
                       >
                         {link.name}
@@ -108,32 +118,9 @@ const NavBar = (props) => {
                   {LINKS_SUPORT_CLASE.map((link) => (
                     <li className="nav-link-drop" key={link.name}>
                       <Link
-                        className={props.path === `${link.to}` ? "active" : ""}
-                        to={link.to}
-                      >
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : (
-              <div></div>
-            )}
-          </li>
-          <li
-            onMouseEnter={handleOpenExercise}
-            onMouseLeave={handleOpenExercise}
-            className="nav-link drop-down-activator"
-          >
-            <span>Exersează </span>
-            {openExercise ? (
-              <div className="nav-bar-dropdown">
-                <ul>
-                  {LINKS_EXERCISE.map((link) => (
-                    <li className="nav-link-drop" key={link.name}>
-                      <Link
-                        className={props.path === `${link.to}` ? "active" : ""}
+                        className={
+                          location.pathname === `${link.to}` ? "active" : ""
+                        }
                         to={link.to}
                       >
                         {link.name}
@@ -148,7 +135,7 @@ const NavBar = (props) => {
           </li>
           <li className="nav-link">
             <Link
-              className={props.path === "/noutati" ? "active" : ""}
+              className={location.pathname === "/noutati" ? "active" : ""}
               to="/noutati"
             >
               Noutăți

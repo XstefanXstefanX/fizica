@@ -1,0 +1,37 @@
+.authentication-container {
+  width: 100vw;
+  height: 92vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.authentication-container .authentication {
+  background: var(--secondary);
+  padding: 4vw;
+  border-radius: 20px;
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  flex-direction: column;
+  > h1 {
+    font-size: 6vw;
+  }
+}
+.authentication-container .authentication .authentication-button {
+  border-radius: 10px;
+  width: 100%;
+  border: none;
+  background: var(--background);
+  padding: 10px;
+  font-size: 3vw;
+}
+.authentication-container .authentication .authentication-button:hover {
+  background-color: var(--accent);
+  cursor: pointer;
+  opacity: 0.7;
+  color: black;
+}
+.profile-picture {
+  border-radius: 20px;
+  display: block;
+}

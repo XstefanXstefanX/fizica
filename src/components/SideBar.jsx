@@ -1,19 +1,14 @@
 import React from "react";
 import "../styles/sidebar.css";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { LINKS_SUPORT_DIDACTIC } from "../data";
 import { LINKS_SUPORT_CLASE } from "../data";
-import { LINKS_EXERCISE } from "../data";
 import DropDownSvg from "../images/dropdown.svg";
 
 const SideBar = (props) => {
   const path = props.path;
   const [drop, setDrop] = React.useState(false);
   const [dropClase, setDropClase] = React.useState(false);
-  const [dropExerseaza, setDropExerseaza] = React.useState(false);
-  const handleDropExerseaza = () => {
-    setDropExerseaza(!dropExerseaza);
-  };
   const handleDropClase = () => {
     setDropClase(!dropClase);
   };
@@ -28,6 +23,14 @@ const SideBar = (props) => {
         <li className="side-nav-link">
           <Link to="/" className={path === "/" ? "side-bar-active" : ""}>
             Pagina de pornire
+          </Link>
+        </li>
+        <li className="side-nav-link">
+          <Link
+            to="/profil"
+            className={path === "/profil" ? "side-bar-active" : ""}
+          >
+            Profilul meu
           </Link>
         </li>
         <li className="side-nav-link">
@@ -66,23 +69,6 @@ const SideBar = (props) => {
           </ul>
         </li>
         <li className="side-nav-link">
-          <span onClick={handleDropExerseaza}>
-            <img src={DropDownSvg} className="dropdown-svg"></img> Exersează
-          </span>
-          <ul className={`side-bar-drop ${dropExerseaza ? "drop" : ""}`}>
-            {LINKS_EXERCISE.map((link) => (
-              <li key={link.name}>
-                <Link
-                  to={link.to}
-                  className={path === `${link.to}` ? "side-bar-active" : ""}
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </li>
-        <li className="side-nav-link">
           <Link
             to="/noutati"
             className={path === "/noutati" ? "side-bar-active" : ""}
@@ -91,7 +77,6 @@ const SideBar = (props) => {
           </Link>
         </li>
       </ul>
-      <Outlet />
     </div>
   );
 };
