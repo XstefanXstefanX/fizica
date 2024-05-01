@@ -100,8 +100,8 @@ const App = () => {
       <KindeProvider
         clientId="7404b3bcee1540d19cf57ad2a67bb08c"
         domain="https://universulfizica.kinde.com"
-        redirectUri="https://universul-fizica.netlify.app"
-        logoutUri="https://universul-fizica.netlify.app"
+        redirectUri="http://localhost:5173"
+        logoutUri="http://localhost:5173"
       >
         <RouterProvider router={router} />
       </KindeProvider>

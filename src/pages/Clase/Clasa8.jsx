@@ -1,15 +1,24 @@
 import React from "react";
 import BannerImg from "../../images/clase-banner.jpg";
 import Banner from "../../components/Banner";
+import Capitol from "../../components/Capitol";
 
 const Clasa8 = () => {
   return (
     <div>
       <Banner image={BannerImg} title={"Clasa VIII"} />
-      <section className="capitol">Fenomene termice</section>
-      <section className="capitol">Fenomene electrice</section>
-      <section className="capitol">Unde</section>
-      <section className="capitol">Fenomene electromagnetice</section>
+      <section className="capitol">
+        <Capitol titlu="Fenomene Termince" clasa="clasa8" />
+      </section>
+      <section className="capitol">
+        <Capitol titlu="Fenomene electrice" clasa="clasa8" />
+      </section>
+      <section className="capitol">
+        <Capitol titlu="Unde" clasa="clasa8" />
+      </section>
+      <section className="capitol">
+        <Capitol titlu="Fenomene electromagnetice" clasa="clasa8" />
+      </section>
     </div>
   );
 };

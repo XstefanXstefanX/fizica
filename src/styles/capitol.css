@@ -1,0 +1,58 @@
+.capitol-container {
+  background: var(--secondary);
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+.capitol-container .capitol-title {
+  font-size: 5vw;
+  text-align: center;
+}
+.capitol-container .capitol-uploader {
+  display: flex;
+  gap: 2rem;
+  background: var(--background);
+  padding: 2rem;
+  border-radius: 20px;
+}
+.file-choose-button {
+  position: relative;
+  background: var(--accent);
+  font-weight: bold;
+  padding: 0.25rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  > span {
+    color: black;
+  }
+}
+.file-choose-button input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px; /* This makes sure the button is large enough */
+  cursor: pointer;
+  opacity: 0;
+}
+.file-choose-button:hover {
+  opacity: 0.8;
+}
+.file-upload-button:hover {
+  opacity: 0.8;
+}
+.file-upload-button {
+  cursor: pointer;
+  border: none;
+  background: var(--accent);
+  color: black;
+  font-weight: bold;
+  padding: 0.25rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+}

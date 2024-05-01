@@ -1,21 +1,40 @@
 import React from "react";
 import BannerImg from "../../images/clase-banner.jpg";
 import Banner from "../../components/Banner";
+import Capitol from "../../components/Capitol";
 
 const Clasa12 = () => {
   return (
     <div>
       <Banner image={BannerImg} title={"Clasa XII"} />
-      <section className="capitol">Oscilaţii şi unde electromagnetice</section>
       <section className="capitol">
-        Elemente de teoria relativităţii restrânse
+        <Capitol
+          titlu="
+        Oscilaţii şi unde electromagnetice"
+          clasa="clasa12"
+        />
       </section>
-      <section className="capitol">Elemente de fizică cuantică</section>
-      <section className="capitol">Elemente de fizică a atomului</section>
       <section className="capitol">
-        Elemente de fizică a nucleului atomic
+        <Capitol
+          titlu="Elemente de teoria relativităţii restrânse"
+          clasa="clasa12"
+        />
       </section>
-      <section className="capitol">Elemente de astronomie</section>
+      <section className="capitol">
+        <Capitol titlu="Elemente de fizică cuantică" clasa="clasa12" />
+      </section>
+      <section className="capitol">
+        <Capitol titlu="Elemente de fizică a atomuluis" clasa="clasa12" />
+      </section>
+      <section className="capitol">
+        <Capitol
+          titlu="Elemente de fizică a nucleului atomic"
+          clasa="clasa12"
+        />
+      </section>
+      <section className="capitol">
+        <Capitol titlu="Elemente de astronomie" clasa="clasa12" />
+      </section>
     </div>
   );
 };
