@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../styles/capitol.css";
 import { storage } from "../firebase";
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
@@ -25,7 +24,7 @@ const Capitol = ({ titlu, clasa }) => {
       <h1 className="capitol-title">{titlu}</h1>
       <div className="capitol-uploader">
         <label htmlFor="fileInput" className="file-choose-button">
-          <span>Alege-ți tema</span>
+          <span>Alege fișierul</span>
           <input
             type="file"
             onChange={(e) => {

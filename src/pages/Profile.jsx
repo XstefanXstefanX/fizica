@@ -3,7 +3,6 @@ import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 
 const Profile = () => {
   const { isLoading, isAuthenticated, logout, user } = useKindeAuth();
-
   if (!isLoading && isAuthenticated) {
     return (
       <div className="authentication-container">

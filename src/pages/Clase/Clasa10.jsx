@@ -7,6 +7,9 @@ const Clasa10 = () => {
   return (
     <div>
       <Banner image={BannerImg} title={"Clasa X"} />
+      <h1 className="teme-produs">
+        <span>Teme</span> de Produs
+      </h1>
       <section className="capitol">
         <Capitol titlu="Cinematica" clasa="clasa10" />
       </section>
