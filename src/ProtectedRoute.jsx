@@ -16,7 +16,7 @@ export default function ProtectedRoute() {
             Ai deja cont?
           </button>
           <button className="authentication-button" onClick={() => register()}>
-            Vrea un cont!
+            Vreau un cont!
           </button>
         </div>
       </div>

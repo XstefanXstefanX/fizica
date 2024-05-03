@@ -142,36 +142,6 @@ const NavBar = () => {
             </Link>
           </li>
         </ul>
-        <div className="search-button" onClick={handleOpenSearch}>
-          <img
-            className="search-icon pointer"
-            src={SearchImg}
-            alt="search-img"
-          />
-        </div>
-        {searchOpen ? (
-          <div className="search-bar-container">
-            <span onClick={handleOpenSearch} className="pointer">
-              {"< "}Înapoi
-            </span>
-            <div className="search-bar">
-              <img
-                className="search-icon pointer"
-                src={BlackSearchImg}
-                alt="search-icon"
-              />
-              <input
-                type="text"
-                label="Search"
-                placeholder="Search this site"
-                onChange={handleInput}
-              />
-            </div>
-            <div></div>
-          </div>
-        ) : (
-          <div className="search-bar no-show"></div>
-        )}
       </nav>
       <div className="fake-nav"></div>
       <Outlet />
