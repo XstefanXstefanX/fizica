@@ -45,7 +45,7 @@ const NavBar = () => {
         <span className="title">
           <Link to="/" className="logo-container">
             <img className="site-logo" src={Logo} alt="logo-image" />
-            FIZICA - lumea mea
+            Universul Fizica
           </Link>
         </span>
         <ul className="nav-bar">
@@ -57,14 +57,7 @@ const NavBar = () => {
               Pagina de pornire
             </Link>
           </li>
-          <li className="nav-link">
-            <Link
-              to="/profil"
-              className={location.pathname === "/profil" ? "active link" : ""}
-            >
-              Profilul Meu
-            </Link>
-          </li>
+
           <li
             onMouseEnter={handleOpenSuport}
             onMouseLeave={handleOpenSuport}
@@ -139,6 +132,14 @@ const NavBar = () => {
               to="/noutati"
             >
               Noutăți
+            </Link>
+          </li>
+          <li className="nav-link">
+            <Link
+              to="/logout"
+              className={location.pathname === "/logout" ? "active link" : ""}
+            >
+              Logout
             </Link>
           </li>
         </ul>

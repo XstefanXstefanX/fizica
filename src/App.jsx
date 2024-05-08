@@ -1,5 +1,6 @@
 import "./styles/index.css";
 import "./styles/banner.css";
+import "./styles/authentication.css";
 import "./styles/capitol.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NavBar from "./components/NavBar";
@@ -17,79 +18,108 @@ import Manual12 from "./pages/SuportDidactic/manual12";
 import FiseDeLucru from "./pages/SuportDidactic/FiseDeLucru";
 import SuportTeoretic from "./pages/SuportDidactic/SuportTeoretic";
 import News from "./pages/News";
-import { KindeProvider } from "@kinde-oss/kinde-auth-react";
-import ProtectedRoute from "./ProtectedRoute";
-import Profile from "./pages/Profile";
+import Logout from "./pages/Logout";
+import SignIn from "./pages/AuthenticationPages/Signin";
+import SignUp from "./pages/AuthenticationPages/Signup";
+import { AuthContext, Context } from "./Context/AuthContext";
+import { Protected } from "./components/Protected";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <NavBar />,
     children: [
       {
-        element: <ProtectedRoute />,
-        children: [
-          {
-            path: "/",
-            element: <Home />,
-          },
-          {
-            path: "/profil",
-            element: <Profile />,
-          },
-          {
-            path: "/clasa8",
-            element: <Clasa8 />,
-          },
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/signin",
+        element: <SignIn />,
+      },
+      {
+        path: "/signup",
+        element: <SignUp />,
+      },
+      {
+        path: "/logout",
+        element: (
+          <Protected>
+            <Logout />
+          </Protected>
+        ),
+      },
+      {
+        path: "/clasa8",
+        element: (
+          <Protected>
+            <Clasa8 />
+          </Protected>
+        ),
+      },
 
-          {
-            path: "/clasa9",
-            element: <Clasa9 />,
-          },
-          {
-            path: "/clasa10",
-            element: <Clasa10 />,
-          },
-          {
-            path: "/clasa11",
-            element: <Clasa11 />,
-          },
-          {
-            path: "/clasa12",
-            element: <Clasa12 />,
-          },
-          {
-            path: "/manual8",
-            element: <Manual8 />,
-          },
-          {
-            path: "/manual9",
-            element: <Manual9 />,
-          },
-          {
-            path: "/manual10",
-            element: <Manual10 />,
-          },
-          {
-            path: "/manual11",
-            element: <Manual11 />,
-          },
-          {
-            path: "/manual12",
-            element: <Manual12 />,
-          },
-          {
-            path: "/fisedelucru",
-            element: <FiseDeLucru />,
-          },
-          {
-            path: "/suportteoretic",
-            element: <SuportTeoretic />,
-          },
-          {
-            path: "/noutati",
-            element: <News />,
-          },
-        ],
+      {
+        path: "/clasa9",
+        element: (
+          <Protected>
+            <Clasa9 />
+          </Protected>
+        ),
+      },
+      {
+        path: "/clasa10",
+        element: (
+          <Protected>
+            <Clasa10 />
+          </Protected>
+        ),
+      },
+      {
+        path: "/clasa11",
+        element: (
+          <Protected>
+            <Clasa11 />
+          </Protected>
+        ),
+      },
+      {
+        path: "/clasa12",
+        element: (
+          <Protected>
+            <Clasa12 />
+          </Protected>
+        ),
+      },
+      {
+        path: "/manual8",
+        element: <Manual8 />,
+      },
+      {
+        path: "/manual9",
+        element: <Manual9 />,
+      },
+      {
+        path: "/manual10",
+        element: <Manual10 />,
+      },
+      {
+        path: "/manual11",
+        element: <Manual11 />,
+      },
+      {
+        path: "/manual12",
+        element: <Manual12 />,
+      },
+      {
+        path: "/fisedelucru",
+        element: <FiseDeLucru />,
+      },
+      {
+        path: "/suportteoretic",
+        element: <SuportTeoretic />,
+      },
+      {
+        path: "/noutati",
+        element: <News />,
       },
     ],
   },
@@ -97,16 +127,9 @@ const router = createBrowserRouter([
 
 const App = () => {
   return (
-    <div>
-      <KindeProvider
-        clientId="7404b3bcee1540d19cf57ad2a67bb08c"
-        domain="https://universulfizica.kinde.com"
-        redirectUri="https://universul-fizica.netlify.app"
-        logoutUri="https://universul-fizica.netlify.app"
-      >
-        <RouterProvider router={router} />
-      </KindeProvider>
-    </div>
+    <AuthContext>
+      <RouterProvider router={router} />
+    </AuthContext>
   );
 };
 

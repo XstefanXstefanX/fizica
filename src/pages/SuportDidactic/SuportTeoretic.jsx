@@ -5,7 +5,7 @@ import Banner from "../../components/Banner";
 const SuportTeoretic = () => {
   return (
     <div>
-      <Banner image={BannerImg} title={"Suport Teoretic"} />
+      <Banner image={BannerImg} title={"Suport"} />
     </div>
   );
 };

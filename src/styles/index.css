@@ -26,3 +26,9 @@ a {
 body {
   background: var(--background);
 }
+.auth-form > input {
+  color: black;
+}
+.image-important {
+  width: 100px;
+}
