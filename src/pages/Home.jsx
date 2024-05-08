@@ -2,7 +2,6 @@ import React from "react";
 import "../styles/home.css";
 import BannerImg from "../images/welcome-banner.jpg";
 import Banner from "../components/Banner";
-import Clasa8 from "../images/clasa8.jpg";
 import Clasa9 from "../images/clasa9.jpg";
 import Clasa10 from "../images/clasa10.jpg";
 import Clasa11 from "../images/clasa11.jpg";
@@ -12,16 +11,9 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div>
-      <Banner image={BannerImg} title={"FIZICA"} />
+      <Banner image={BannerImg} title={"MATEMATICA"} />
       <div className="home">
         <div className="lista-clase">
-          <div className="clasa">
-            <img src={Clasa8} alt="clasa8-img" />
-            <h1>Clasa 8</h1>
-            <Link className="lista-clase-link" to="/clasa8">
-              Continuare...
-            </Link>
-          </div>
           <div className="clasa">
             <img src={Clasa9} alt="clasa9-img" />
             <h1>Clasa 9</h1>
@@ -57,15 +49,18 @@ const Home = () => {
             <h3>
               <hr />
               <br />
-              "Omul mediocru priveşte fără să vadă, ascultă fără să audă, atinge
-              fără să simtă, mănâncă fără să deguste, se mişcă fără vigilenţă
-              fizică, inhalează fără să fie atent la miros sau la parfum şi
-              vorbeşte fără să gândească."
+              „Un matematician face matematică fiindcă vede în matematică ceva
+              frumos, ceva interesant, ceva care îi place, ceva care îi e drag,
+              ceva care îl tulbură, îl face să gândească, să mediteze, să
+              viseze.”
               <br />
               <br />
               <hr />
             </h3>
-            <p>"Relativitatea se aplica la fizica, nu la etica."</p>
+            <p>
+              Matematica este o limbă şi o ştiinţă.
+              <span>- Lucian Blaga</span>
+            </p>
           </div>
         </div>
       </div>

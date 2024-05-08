@@ -9,7 +9,7 @@
   margin: 1rem;
 }
 .capitol-container .capitol-title {
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 .capitol-container .capitol-uploader {
   display: flex;
@@ -57,7 +57,7 @@
 }
 @media screen and (max-width: 60rem) {
   .capitol-container .capitol-title {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
   }
   .file-choose-button,
   .file-upload-button {
@@ -66,7 +66,7 @@
 }
 @media screen and (max-width: 30rem) {
   .capitol-container .capitol-title {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
   }
   .file-choose-button,
   .file-upload-button {

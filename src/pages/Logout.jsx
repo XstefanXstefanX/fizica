@@ -12,8 +12,9 @@ const Profile = () => {
   }
   return (
     <div className="profile">
+      <h1>Vrei să pleci?</h1>
       <button className="logout-button" onClick={() => handleSignOut()}>
-        Vrei să pleci?
+        Logout
       </button>
     </div>
   );

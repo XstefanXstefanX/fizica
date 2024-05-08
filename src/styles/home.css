@@ -66,7 +66,7 @@
     color: var(--secondary);
   }
   > p {
-    color: var(--secondary);
+    color: var(--text);
     font-weight: bold;
     font-size: 2rem;
     height: 100%;
@@ -78,7 +78,7 @@
     justify-content: flex-start;
     > span {
       font-weight: bold;
-      color: var(--secondary);
+      color: var(--text);
     }
   }
 }

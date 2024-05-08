@@ -26,14 +26,6 @@ const SideBar = (props) => {
           </Link>
         </li>
         <li className="side-nav-link">
-          <Link
-            to="/profil"
-            className={path === "/profil" ? "side-bar-active" : ""}
-          >
-            Profilul meu
-          </Link>
-        </li>
-        <li className="side-nav-link">
           <span onClick={handleDrop}>
             <img src={DropDownSvg} className="dropdown-svg"></img> Suport
             Didactic
@@ -74,6 +66,14 @@ const SideBar = (props) => {
             className={path === "/noutati" ? "side-bar-active" : ""}
           >
             Noutăți
+          </Link>
+        </li>
+        <li className="side-nav-link">
+          <Link
+            to="/logout"
+            className={path === "/logout" ? "side-bar-active" : ""}
+          >
+            Logout
           </Link>
         </li>
       </ul>

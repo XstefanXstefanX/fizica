@@ -45,7 +45,7 @@ const NavBar = () => {
         <span className="title">
           <Link to="/" className="logo-container">
             <img className="site-logo" src={Logo} alt="logo-image" />
-            Universul Fizica
+            Universul Matematicii
           </Link>
         </span>
         <ul className="nav-bar">

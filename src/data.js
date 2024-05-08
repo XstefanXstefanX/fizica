@@ -4,24 +4,8 @@ export const LINKS_SUPORT_DIDACTIC = [
     name: "Fise De Lucru",
   },
   {
-    to: "/manual8",
-    name: "Manual Clasa VIII",
-  },
-  {
-    to: "/manual9",
-    name: "Manual Clasa IX",
-  },
-  {
-    to: "/manual10",
-    name: "Manual Clasa X",
-  },
-  {
-    to: "/manual11",
-    name: "Manual Clasa XI",
-  },
-  {
-    to: "/manual12",
-    name: "Manual Clasa XII",
+    to: "/manuale",
+    name: "Manuale",
   },
   {
     to: "/suportteoretic",
@@ -29,10 +13,6 @@ export const LINKS_SUPORT_DIDACTIC = [
   },
 ];
 export const LINKS_SUPORT_CLASE = [
-  {
-    to: "/clasa8",
-    name: "Clasa VIII",
-  },
   {
     to: "/clasa9",
     name: "Clasa IX",

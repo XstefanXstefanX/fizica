@@ -13,30 +13,24 @@ const Clasa12 = () => {
       <section className="capitol">
         <Capitol
           titlu="
-        Oscilaţii şi unde electromagnetice"
+        Algebră"
           clasa="clasa12"
         />
+      </section>
+      <section className="capitol">
+        <Capitol titlu="Geometrie" clasa="clasa12" />
+      </section>
+      <section className="capitol">
+        <Capitol titlu="Analiză matematică" clasa="clasa12" />
+      </section>
+      <section className="capitol">
+        <Capitol titlu="Elemente de combinatorică" clasa="clasa12" />
       </section>
       <section className="capitol">
         <Capitol
-          titlu="Elemente de teoria relativităţii restrânse"
+          titlu="Elemente de statistică matematică și calcul financiar"
           clasa="clasa12"
         />
-      </section>
-      <section className="capitol">
-        <Capitol titlu="Elemente de fizică cuantică" clasa="clasa12" />
-      </section>
-      <section className="capitol">
-        <Capitol titlu="Elemente de fizică a atomuluis" clasa="clasa12" />
-      </section>
-      <section className="capitol">
-        <Capitol
-          titlu="Elemente de fizică a nucleului atomic"
-          clasa="clasa12"
-        />
-      </section>
-      <section className="capitol">
-        <Capitol titlu="Elemente de astronomie" clasa="clasa12" />
       </section>
     </div>
   );

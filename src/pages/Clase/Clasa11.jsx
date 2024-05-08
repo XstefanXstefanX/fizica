@@ -11,25 +11,13 @@ const Clasa11 = () => {
         <span>Teme</span> de Produs
       </h1>
       <section className="capitol">
-        <Capitol titlu="Teoria cinetico-moleculară" clasa="clasa11" />
+        <Capitol titlu="Algebră" clasa="clasa11" />
       </section>
       <section className="capitol">
-        <Capitol titlu="Termodinamică" clasa="clasa11" />
+        <Capitol titlu="Geometrie" clasa="clasa11" />
       </section>
       <section className="capitol">
-        <Capitol
-          titlu="Lichide. Solide. Transformări de fazăs"
-          clasa="clasa11"
-        />
-      </section>
-      <section className="capitol">
-        <Capitol titlu="Electrostatica" clasa="clasa11" />
-      </section>
-      <section className="capitol">
-        <Capitol titlu="Electrocinetica" clasa="clasa11" />
-      </section>
-      <section className="capitol">
-        <Capitol titlu="Curentul electric în diferite medii" clasa="clasa11" />
+        <Capitol titlu="Analiză matematică" clasa="clasa11" />
       </section>
     </div>
   );
