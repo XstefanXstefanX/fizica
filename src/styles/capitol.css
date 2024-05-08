@@ -46,6 +46,7 @@
   opacity: 0.8;
 }
 .file-upload-button {
+  text-align: center;
   cursor: pointer;
   border: none;
   background: var(--accent);
