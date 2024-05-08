@@ -17,7 +17,7 @@ const SignUp = () => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then((res) => {
-        nagivate("/profil");
+        nagivate("/");
       })
       .catch((error) => {
         console.error(error);
