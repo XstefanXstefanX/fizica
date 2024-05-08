@@ -64,7 +64,7 @@ const NavBar = () => {
             className="nav-link drop-down-activator"
           >
             <span>
-              SuportDidactic{" "}
+              Suport Didactic{" "}
               <img
                 className="dropdown-svg"
                 src={DropDownSVg}
