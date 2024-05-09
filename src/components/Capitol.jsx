@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { storage } from "../firebase";
-import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
-import { v4 } from "uuid";
+import { ref, uploadBytes } from "firebase/storage";
 import { getAuth } from "firebase/auth";
 
 const Capitol = ({ titlu, clasa }) => {
   const auth = getAuth();
   const [imageUpload, setImageUpload] = useState(null);
-  const uploadImage = () => {
+  const upload = () => {
     if (imageUpload == null) return;
     // Don't upload two files with the same name
     const imageRef = ref(
@@ -31,7 +30,7 @@ const Capitol = ({ titlu, clasa }) => {
             }}
           />
         </label>
-        <button className="file-upload-button" onClick={uploadImage}>
+        <button className="file-upload-button" onClick={upload}>
           Trimite
         </button>
       </div>

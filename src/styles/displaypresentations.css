@@ -1,0 +1,17 @@
+.prezentari-canva {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.prezentari-canva > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.prezentari-canva .canva-creator,
+.prezentari-canva .canva-proiect {
+  text-shadow: 2px 2px 1px black;
+  font-size: 2vw;
+  padding: 0 1rem;
+}

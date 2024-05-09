@@ -1,7 +1,5 @@
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 const firebaseConfig = {
   apiKey: "AIzaSyBAXaVLwgkSN1YJmBSZ7T-rXyPdPZCnAug",
@@ -11,6 +9,8 @@ const firebaseConfig = {
   messagingSenderId: "154616674380",
   appId: "1:154616674380:web:a35dd2fdb6f6481db7dce9",
   measurementId: "G-9S23PX9CP3",
+  databaseURL:
+    "https://data-43495-default-rtdb.europe-west1.firebasedatabase.app/",
 };
 
 // Initialize Firebase

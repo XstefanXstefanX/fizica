@@ -13,6 +13,9 @@
   --animation-timing: 200ms ease;
   --hambuger-height: calc(var(--bar-height) * 3 + var(--bar-gap) * 2);
 }
+input {
+  color: black;
+}
 * {
   font-family: "Poppins", sans-serif;
   padding: 0;
@@ -29,6 +32,23 @@ body {
 .auth-form > input {
   color: black;
 }
-.image-important {
+.image-special {
   width: 100px;
+}
+.iframe-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.iframe {
+  box-shadow: 5px 5px 5px var(--secondary);
+  width: 70vw;
+  aspect-ratio: 16/9;
+}
+.projects-title {
+  text-align: center;
+  font-size: 5vw;
+  > span {
+    color: var(--accent);
+  }
 }

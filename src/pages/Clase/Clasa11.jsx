@@ -2,6 +2,8 @@ import React from "react";
 import BannerImg from "../../images/clase-banner.jpg";
 import Banner from "../../components/Banner";
 import Capitol from "../../components/Capitol";
+import DisplayPresentations from "../../components/DisplayPresentations";
+import AddCanvaPresentations from "../../components/AddCanvaPresentations";
 
 const Clasa11 = () => {
   return (
@@ -19,6 +21,8 @@ const Clasa11 = () => {
       <section className="capitol">
         <Capitol titlu="Analiză matematică" clasa="clasa11" />
       </section>
+      <AddCanvaPresentations class="clasa-11" />
+      <DisplayPresentations class="clasa-11" />
     </div>
   );
 };

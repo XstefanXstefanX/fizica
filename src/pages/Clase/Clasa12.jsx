@@ -2,6 +2,8 @@ import React from "react";
 import BannerImg from "../../images/clase-banner.jpg";
 import Banner from "../../components/Banner";
 import Capitol from "../../components/Capitol";
+import DisplayPresentations from "../../components/DisplayPresentations";
+import AddCanvaPresentations from "../../components/AddCanvaPresentations";
 
 const Clasa12 = () => {
   return (
@@ -32,6 +34,8 @@ const Clasa12 = () => {
           clasa="clasa12"
         />
       </section>
+      <AddCanvaPresentations class="clasa-12" />
+      <DisplayPresentations class="clasa-12" />
     </div>
   );
 };

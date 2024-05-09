@@ -11,8 +11,12 @@
   },
   "dependencies": {
     "@kinde-oss/kinde-auth-react": "^3.0.28",
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
     "firebase": "^10.11.1",
+    "googleapis": "^137.1.0",
     "react": "^18.2.0",
+    "react-doc-viewer": "^0.1.5",
     "react-dom": "^18.2.0",
     "react-dropdown": "^1.11.0",
     "react-hook-form": "^7.51.3",
