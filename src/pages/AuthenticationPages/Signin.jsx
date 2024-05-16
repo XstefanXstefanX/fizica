@@ -1,11 +1,16 @@
 import React from "react";
 import { useState } from "react";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const SignIn = () => {
-  const nagivate = useNavigate();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const auth = getAuth();
@@ -13,12 +18,22 @@ const SignIn = () => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((user) => {
-        nagivate("/");
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);
       });
   }
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+      navigate("/");
+    } catch (error) {
+      console.error("Google Sign-In Error:", error);
+    }
+  };
   return (
     <div className="auth-container">
       <form className="auth-form">
@@ -38,11 +53,15 @@ const SignIn = () => {
           placeholder="Parola"
         />
         <button
+          className="sign-button"
           onClick={(e) => {
             handleSignIn(e);
           }}
         >
           Sign In
+        </button>
+        <button className="google-sign-in-out" onClick={handleGoogleSignIn}>
+          <h1>Sign In with Google</h1>
         </button>
         <label>
           <Link to="/signup">

@@ -43,6 +43,7 @@
   height: auto;
 }
 .side-bar-active {
+  font-weight: bold;
   color: var(--accent);
   position: relative;
 }

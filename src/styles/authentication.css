@@ -1,6 +1,20 @@
+.google-sign-in-out {
+  border: none;
+  background: none;
+  > h1 {
+    font-size: 1.5rem;
+    color: black;
+    text-align: left;
+  }
+  > h1:hover {
+    text-decoration: underline;
+  }
+}
 .auth-container {
   width: 100vw;
-  height: 80vh;
+  height: calc(100vh - 7vh);
+  background: url("../images/elephant.jpg") no-repeat center;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +44,7 @@
   cursor: pointer;
 }
 .auth-form > input,
-.auth-form > button,
+.sign-button,
 .logout-button {
   background: var(--secondary);
   border: none;
@@ -48,6 +62,7 @@
 .signin-link:hover {
   text-decoration: underline;
 }
+/* *LOGOUT* */
 .profile {
   font-size: 3vw;
   display: flex;
