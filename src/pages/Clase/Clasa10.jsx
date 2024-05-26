@@ -10,7 +10,6 @@ import DisplayPDF from "../../components/DisplayPDF";
 const Clasa10 = () => {
   return (
     <>
-    <>
       <Banner image={BannerImg} title={"Clasa X"} />
       <div className="class-container">
         <nav className="class-nav">

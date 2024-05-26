@@ -11,7 +11,6 @@ import Footer from "../../components/Footer";
 const Clasa9 = () => {
   return (
     <>
-    <>
       <Banner image={BannerImg} title={"Clasa IX"} />
       <div className="class-container">
         <nav className="class-nav">
