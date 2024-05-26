@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BannerImg from "../../images/clase-banner.jpg";
 import Banner from "../../components/Banner";
 import Capitol from "../../components/Capitol";
@@ -10,6 +10,7 @@ import Footer from "../../components/Footer";
 
 const Clasa9 = () => {
   return (
+    <>
     <>
       <Banner image={BannerImg} title={"Clasa IX"} />
       <div className="class-container">

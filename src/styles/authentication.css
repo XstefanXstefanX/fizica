@@ -10,6 +10,18 @@
     text-decoration: underline;
   }
 }
+.google-sign-in-out {
+  border: none;
+  background: none;
+  > h1 {
+    font-size: 1.5rem;
+    color: black;
+    text-align: left;
+  }
+  > h1:hover {
+    text-decoration: underline;
+  }
+}
 .auth-container {
   width: 100vw;
   height: calc(100vh - 7vh);
@@ -87,6 +99,7 @@
 }
 .auth-form > input,
 .sign-button,
+.sign-button,
 .logout-button {
   background: var(--secondary);
   border: none;
@@ -104,6 +117,7 @@
 .signin-link:hover {
   text-decoration: underline;
 }
+/* *LOGOUT* */
 /* *LOGOUT* */
 .profile {
   font-size: 3vw;
