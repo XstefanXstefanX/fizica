@@ -1,0 +1,247 @@
+.class-container .class-nav > ul {
+  display: flex;
+  justify-content: space-around;
+  > li {
+    font-size: 3vw;
+    background: var(--accent);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    box-shadow: 2px 2px 10px var(--background2);
+  }
+  > li:hover {
+    cursor: pointer;
+  }
+}
+.important-title {
+  font-size: 4vw;
+  position: relative;
+  text-align: center;
+  > span {
+    color: var(--accent);
+  }
+}
+.class-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 10vw;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  > * {
+    width: 100%;
+    border-radius: 0.5rem;
+    padding: 1rem 0;
+  }
+}
+/* **ALL FILES** */
+.class-capitole {
+  background: var(--background2);
+}
+.capitol-container {
+  border-bottom: 5px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  margin: 0 5rem;
+}
+.capitol-container .capitol-title {
+  font-size: 3vw;
+}
+.capitol-container .capitol-uploader {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 20px;
+}
+.capitol-container .capitol-uploader > input[type="text"] {
+  height: 4vw;
+  border: none;
+  font-size: 2vw;
+  border-radius: 5px;
+}
+.capitol-container .capitol-uploader > input[type="text"]:focus {
+  outline: none;
+  border: none;
+}
+.capitol-uploader .nume-fisier-alege {
+  font-size: 2.25vw;
+}
+.file-choose-button {
+  position: relative;
+  background: var(--accent);
+  font-weight: bold;
+  padding: 0.25rem;
+  font-size: 2.25vw;
+  border-radius: 5px;
+  > span {
+    color: black;
+  }
+}
+.file-choose-button input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px; /* This makes sure the button is large enough */
+  cursor: pointer;
+  opacity: 0;
+}
+.file-choose-button:hover {
+  opacity: 0.8;
+}
+.file-upload-button:hover {
+  opacity: 0.8;
+}
+.file-upload-button {
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  background: var(--accent);
+  color: black;
+  font-weight: bold;
+  padding: 0.25rem;
+  font-size: 2.25vw;
+  border-radius: 5px;
+}
+/* **CANVA** */
+.canva-form-container {
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--background2);
+}
+.canva-form {
+  margin: 1rem 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.canva-form > label {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0.25rem;
+  align-items: center;
+  > h1 {
+    justify-self: right;
+    padding: 0 2vw;
+    font-size: 2.5vw;
+  }
+}
+.canva-form > label > input {
+  width: 100%;
+  font-size: 2vw;
+  border: 1px solid var(--background);
+  border-radius: 5px;
+  text-align: center;
+}
+.canva-form > label > input:focus {
+  outline: none;
+}
+.canva-form > button {
+  transition: all 100ms ease;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  color: var(--secondary);
+  font-size: 3vw;
+  font-weight: bold;
+  background: var(--accent);
+}
+.canva-form > button:hover {
+  cursor: pointer;
+}
+.canva-form > button:active {
+  background: var(--secondary);
+  color: var(--accent);
+}
+
+/* *PDF FILE* */
+
+.pdf-file-container {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--background2);
+}
+.pdf-file-container > h1 {
+  color: var(--accent);
+  font-size: 4.5vw;
+}
+.pdf-file-container > ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 2rem;
+}
+.pdf-file-container > ul > li > a {
+  font-weight: 300;
+  font-style: italic;
+  transition: color 150ms ease;
+}
+.pdf-file-container > ul > li > a:hover {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
+@media screen and (max-width: 60rem) {
+  .file-choose-button,
+  .file-upload-button {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 45rem) {
+  .class-container {
+    padding: 0 5vw;
+  }
+  .capitol-container .capitol-title {
+    font-size: 1rem;
+  }
+  .file-choose-button,
+  .file-upload-button {
+    font-size: 0.8rem;
+  }
+  .capitol-container {
+    margin: 0 1rem;
+  }
+  .canva-form {
+    margin: 0 1rem;
+    > label > input {
+      font-size: 1rem;
+    }
+  }
+  .canva-form > label {
+    display: flex;
+    flex-direction: column;
+    > h1 {
+      font-size: 1rem;
+      align-self: first baseline;
+    }
+  }
+  .canva-form > button {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 23rem) {
+  .pdf-file-container > ul > li > a {
+    font-size: 0.8rem;
+  }
+  .file-choose-button,
+  .file-upload-button {
+    font-size: 0.65rem;
+  }
+}

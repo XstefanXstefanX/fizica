@@ -1,9 +1,7 @@
 import "./styles/index.css";
 import "./styles/banner.css";
-import "./styles/canvaform.css";
 import "./styles/authentication.css";
 import "./styles/displaypresentations.css";
-import "./styles/capitol.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";

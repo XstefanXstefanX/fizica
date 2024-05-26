@@ -36,9 +36,11 @@ const AddCanvaPresentations = (props) => {
   return (
     <div className="canva-form-container">
       <form className="canva-form" onSubmit={writeUrl}>
-        <h1>Adaugă prezentarea ta Canva</h1>
+        <h1 className="important-title">
+          <span>Adaugă</span> prezentarea ta Canva
+        </h1>
         <label>
-          Nume:{" "}
+          <h1>Nume: </h1>
           <input
             type="text"
             required
@@ -46,7 +48,7 @@ const AddCanvaPresentations = (props) => {
           />
         </label>
         <label>
-          Prenume:{" "}
+          <h1>Prenume: </h1>
           <input
             type="text"
             required
@@ -54,7 +56,7 @@ const AddCanvaPresentations = (props) => {
           />
         </label>
         <label>
-          Denumire Proiect:{" "}
+          <h1>Denumire Proiect: </h1>
           <input
             type="text"
             required
@@ -62,7 +64,7 @@ const AddCanvaPresentations = (props) => {
           />
         </label>
         <label>
-          Link prezentare:{" "}
+          <h1>Link prezentare: </h1>
           <input
             type="text"
             required

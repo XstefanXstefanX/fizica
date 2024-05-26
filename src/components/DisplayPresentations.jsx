@@ -21,7 +21,7 @@ const DisplayPresentations = (props) => {
     return () => unsubscribe();
   }, []);
   return (
-    <div>
+    <div id="prezentari-canva">
       <h2 className="projects-title">
         Produsele <span>elevilor:</span>
       </h2>

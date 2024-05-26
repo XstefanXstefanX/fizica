@@ -1,0 +1,46 @@
+.footer {
+  --u: 10px;
+  --c1: var(--accent);
+  --c2: var(--background2);
+  --c3: var(--secondary);
+  --c4: #0d181c;
+  --gp: 50% / calc(var(--u) * 10) calc(var(--u) * 10);
+  --bp: calc(var(--u) * -5) calc(var(--u) * -5);
+  --dg: 0 25%, #fff0 0 100%;
+  --bg: conic-gradient(from 0deg at 50% 8.33%, var(--c4) var(--dg)) var(--gp),
+    conic-gradient(from 270deg at 10.33% 8.33%, var(--c4) var(--dg)) var(--gp),
+    conic-gradient(from 270deg at 9.33% 16.66%, var(--c1) var(--dg)) var(--gp),
+    conic-gradient(from 270deg at 8.33% 50%, var(--c4) var(--dg)) var(--gp),
+    conic-gradient(from 0deg at 83.33% 8.33%, var(--c4) var(--dg)) var(--gp),
+    conic-gradient(from 0deg at 82.33% 16.66%, var(--c1) var(--dg)) var(--gp),
+    conic-gradient(from 0deg at 83.33% 25%, var(--c4) var(--dg)) var(--gp),
+    conic-gradient(from 0deg at 91.645% 50%, var(--c3) var(--dg)) var(--gp),
+    conic-gradient(from 0deg at 83.33% 50%, var(--c4) var(--dg)) var(--gp),
+    conic-gradient(from 0deg at 58.33% 8.33%, var(--c4) var(--dg)) var(--gp),
+    conic-gradient(from 0deg at 58.33% 16.66%, var(--c1) var(--dg)) var(--gp),
+    conic-gradient(from 0deg at 58.33% 25%, var(--c4) var(--dg)) var(--gp),
+    conic-gradient(from 0deg at 58.33% 33.33%, var(--c2) var(--dg)) var(--gp),
+    conic-gradient(from 0deg at 58.33% 41.66%, var(--c4) var(--dg)) var(--gp),
+    conic-gradient(from 0deg at 58.33% 50%, var(--c2) var(--dg)) var(--gp),
+    conic-gradient(from 0deg at 50% 50%, var(--c4) var(--dg)) var(--gp),
+    conic-gradient(from 0deg at 41.66% 50%, var(--c3) var(--dg)) var(--gp),
+    conic-gradient(from 0deg at 33.33% 50%, var(--c4) var(--dg)) var(--gp),
+    linear-gradient(
+        0deg,
+        #fff0 50%,
+        var(--c2) 0 58.33%,
+        var(--c4) 0 66.66%,
+        var(--c2) 0 75%,
+        var(--c4) 0 83.33%,
+        var(--c1) 0 91.66%,
+        var(--c4) 0 100%
+      )
+      var(--gp);
+  background: var(--bg), var(--bg);
+  background-position: var(--bp), var(--bp), var(--bp), var(--bp), var(--bp),
+    var(--bp), var(--bp), var(--bp), var(--bp), var(--bp), var(--bp), var(--bp),
+    var(--bp), var(--bp), var(--bp), var(--bp), var(--bp), var(--bp), var(--bp),
+    0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+    0 0, 0 0, 0 0, 0 0;
+  height: 100px;
+}
